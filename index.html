@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Propuesta Kuida 2.2 - Perfil de Proyecto Fortalecido</title>
+  <title>Propuesta Kuida 0.2.7-beta - Perfil de Proyecto Fortalecido</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -15,7 +15,9 @@
       --kuida-dark: #212529;
       --kuida-light: #f8f9fa;
       --kuida-danger: #dc3545;
+      --kuida-success: #198754;
     }
+    html { scroll-behavior: smooth; }
     body { font-family: 'Montserrat', sans-serif; background-color: var(--kuida-light); }
     .doc { background-color: #fff; border-radius: 1rem; box-shadow: 0 0.5rem 1.5rem rgba(0,0,0,.07); }
     header { border-bottom: 4px solid var(--kuida-primary); }
@@ -27,8 +29,14 @@
     .ref-badge { font-weight: 600; font-size: .7rem; padding: .2rem .4rem; border: 1px solid #ced4da; border-radius: 999px; background-color: #eef2f5; color: #495057; text-decoration: none; display: inline-block; margin: 0 2px; vertical-align: super; }
     .ref-badge:hover { background-color: #e2e8f0; color: #212529; }
     .highlight { color: var(--kuida-primary); font-weight: 700; }
-    .stat-card { background-color: var(--kuida-light); border: 1px solid #e2e8f0; border-left: 5px solid var(--kuida-danger); padding: 1.5rem; border-radius: .5rem; margin-bottom: 1.5rem; height: 100%; }
-    .stat-card .stat-number { font-size: 2.2rem; font-weight: 800; color: var(--kuida-danger); line-height: 1.1; }
+    .stat-card { background-color: #fff; border: 1px solid #e2e8f0; border-left-width: 5px; padding: 1.5rem; border-radius: .5rem; height: 100%; box-shadow: 0 .25rem .5rem rgba(0,0,0,.04); }
+    .stat-card.danger { border-left-color: var(--kuida-danger); }
+    .stat-card.danger .stat-number { color: var(--kuida-danger); }
+    .stat-card.info { border-left-color: var(--kuida-primary); }
+    .stat-card.info .stat-number { color: var(--kuida-primary); }
+    .stat-card.success { border-left-color: var(--kuida-success); }
+    .stat-card.success .stat-number { color: var(--kuida-success); }
+    .stat-card .stat-number { font-size: 2.2rem; font-weight: 800; line-height: 1.1; }
     .stat-card .stat-label { font-size: 1rem; font-weight: 600; color: var(--kuida-dark); }
     .partner-card { border: 1px solid #ddd; border-left: 5px solid var(--kuida-secondary); padding: 1.25rem; border-radius: .5rem; margin-bottom: 1rem; }
     .table thead th { background-color: #f1f5f9; font-weight: 700; }
@@ -50,127 +58,159 @@
         <h1 class="h2 mb-1">Propuesta de Proyecto: Kuida</h1>
         <p class="h5 text-muted fw-bold">Un Ecosistema de IA Conversacional para Democratizar la Seguridad y Salud en el Trabajo (SST) en las MiPyMEs de Latinoamérica</p>
       </header>
-
+      
       <section class="section" id="resumen">
         <h2 class="h4">1. Resumen Ejecutivo</h2>
         <p class="lead">
-          Las Micro, Pequeñas y Medianas Empresas (MiPyMEs) son la columna vertebral económica de Latinoamérica, generando cerca del 60% del empleo formal<a class="ref-badge" href="#ref-1">1</a>. Sin embargo, enfrentan una crisis silenciosa: la falta de gestión en Seguridad y Salud en el Trabajo (SST) genera costos humanos y económicos devastadores, estimados en **US$76 mil millones anuales para la región**<a class="ref-badge" href="#ref-6">6</a>. Esta brecha es impulsada por la falta de conocimiento, recursos limitados y la inaccesibilidad de las soluciones digitales existentes.
+          El presente proyecto propone prototipar y validar un agente conversacional inteligente con una plataforma digital integradora para la gestión de la Seguridad y Salud en el Trabajo (SST), HSEQ y normas ISO, dirigida a las MiPyMEs de América Latina. La solución acompañará a las empresas en todas las fases (diagnóstico, planificación, ejecución y seguimiento) y estimulará el fortalecimiento de una comunidad de práctica en la región.
         </p>
-        <p>
-          Este proyecto propone <strong>Kuida, el primer Agente de IA conversacional (voz y texto)</strong> diseñado como un asesor proactivo 24/7 para guiar a las MiPyMEs en la gestión de SST, HSEQ y normativas ISO. A través de un ecosistema integral que incluye una plataforma de soporte y una Escuela Virtual, Kuida ataca la raíz del problema. Con alianzas estratégicas consolidadas y un plan de 9 meses para el prototipo, buscamos demostrar un impacto medible en el fortalecimiento de una cultura preventiva, un factor crítico para salvar vidas y potenciar la productividad regional.
-        </p>
+        <h3 class="h5 mt-4">1.1. Motivación Principal</h3>
+        <ul>
+            <li><strong>Importancia Económica y Social:</strong> Las MiPyMEs son la columna vertebral de la economía, representando el 99.5% de las empresas<a class="ref-badge" href="#ref-1">1</a> y generando el 60% del empleo formal en Latinoamérica<a class="ref-badge" href="#ref-1">1</a>. En Colombia, el 91% de las empresas afiliadas al SGRL en 2020 tenía menos de 50 trabajadores<a class="ref-badge" href="#ref-2">2</a>.</li>
+            <li><strong>Costos Humanos y Económicos:</strong> La falta de gestión en SST tiene consecuencias devastadoras. La OIT estima 2.93 millones de muertes laborales anuales en el mundo<a class="ref-badge" href="#ref-4">4</a>, con pérdidas que alcanzan el 4% del PIB global<a class="ref-badge" href="#ref-5">5</a>. Para América Latina, el costo anual se estima en US$76 mil millones<a class="ref-badge" href="#ref-6">6</a>.</li>
+            <li><strong>Barreras Sistémicas:</strong> Las MiPyMEs enfrentan barreras de falta de recursos, desconocimiento normativo y percepción de altos costos que les impiden adoptar sistemas de gestión<a class="ref-badge" href="#ref-7">7</a><a class="ref-badge" href="#ref-8">8</a>.</li>
+            <li><strong>Inaccesibilidad de la Oferta Actual:</strong> Las soluciones de software existentes tienen costos prohibitivos para las MiPyMEs, con licencias que superan los US$220 mensuales<a class="ref-badge" href="#ref-10">10</a><a class="ref-badge" href="#ref-11">11</a>.</li>
+        </ul>
       </section>
 
       <section class="section" id="problema">
-        <h2 class="h4">2. El Problema: Una Crisis de Seguridad y Productividad</h2>
-        <p>Antes de presentar nuestra solución, es imperativo dimensionar la magnitud del problema. Las MiPyMEs, a pesar de ser el motor económico que representa el 99.5% de las empresas de la región<a class="ref-badge" href="#ref-1">1</a>, son desproporcionadamente vulnerables a los riesgos laborales.</p>
-        
+        <h2 class="h4">2. Problema y Justificación</h2>
+        <p>Para comprender la urgencia de nuestra propuesta, es vital dimensionar el problema a través de las siguientes cifras:</p>
+
         <div class="row">
-            <div class="col-md-4">
-                <div class="stat-card">
+            <div class="col-md-4 mb-3">
+                <div class="stat-card info">
+                    <div class="stat-number">99.5%</div>
+                    <div class="stat-label">de las empresas en LATAM son MiPyMEs, el motor de la economía<a class="ref-badge" href="#ref-1">1</a>.</div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-3">
+                <div class="stat-card danger">
+                    <div class="stat-number">80%</div>
+                    <div class="stat-label">de los trabajadores podrían estar expuestos a riesgos laborales<a class="ref-badge" href="#ref-6">6</a>.</div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-3">
+                <div class="stat-card danger">
+                    <div class="stat-number">USD $76 Billones</div>
+                    <div class="stat-label">costo anual para la región por falta de medidas de SST<a class="ref-badge" href="#ref-6">6</a>.</div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-3">
+                <div class="stat-card danger">
                     <div class="stat-number">2.93 M</div>
-                    <div class="stat-label">de muertes anuales a nivel global por causas relacionadas al trabajo<a class="ref-badge" href="#ref-4">4</a>.</div>
+                    <div class="stat-label">de muertes anuales a nivel global relacionadas al trabajo<a class="ref-badge" href="#ref-4">4</a>.</div>
                 </div>
             </div>
-            <div class="col-md-4">
-                <div class="stat-card">
+            <div class="col-md-4 mb-3">
+                <div class="stat-card danger">
                     <div class="stat-number">~4% PIB</div>
-                    <div class="stat-label">mundial se pierde por la falta de una cultura de prevención en SST<a class="ref-badge" href="#ref-5">5</a>.</div>
+                    <div class="stat-label">mundial se pierde por la falta de una cultura de prevención<a class="ref-badge" href="#ref-5">5</a>.</div>
                 </div>
             </div>
-            <div class="col-md-4">
-                <div class="stat-card">
-                    <div class="stat-number">$76 Billones</div>
-                    <div class="stat-label">costo anual estimado para América Latina por falta de medidas de SST<a class="ref-badge" href="#ref-6">6</a>.</div>
+            <div class="col-md-4 mb-3">
+                <div class="stat-card success">
+                    <div class="stat-number">67%</div>
+                    <div class="stat-label">de reducción potencial en accidentes al implementar sistemas de gestión<a class="ref-badge" href="#ref-14">14</a>.</div>
                 </div>
             </div>
         </div>
 
         <h3 class="h5 mt-3">2.1. Barreras Estructurales para las MiPyMEs</h3>
-        <p>La OIT y estudios regionales confirman que las MiPyMEs enfrentan un conjunto de barreras sistémicas que les impiden gestionar eficazmente la SST<a class="ref-badge" href="#ref-7">7</a>:</p>
+        <p>Estas cifras alarmantes son el resultado de barreras sistémicas que impiden a las MiPyMEs gestionar eficazmente la SST<a class="ref-badge" href="#ref-7">7</a>:</p>
         <ul>
             <li><strong>Brechas de Conocimiento y Cumplimiento:</strong> Existe un profundo desconocimiento normativo. Estudios cualitativos en Colombia muestran que muchas MiPyMEs no cumplen con regulaciones básicas como la Resolución 0312/2019, exponiéndose a sanciones y, peor aún, a accidentes prevenibles<a class="ref-badge" href="#ref-12">12</a><a class="ref-badge" href="#ref-16">16</a>.</li>
             <li><strong>Limitaciones Financieras:</strong> La percepción de altos costos es una barrera mayor<a class="ref-badge" href="#ref-8">8</a>. Las empresas priorizan la operación diaria sobre inversiones en prevención que consideran un lujo y no una necesidad.</li>
             <li><strong>El Vacío de Soluciones Viables:</strong> El mercado actual de software HSEQ/ISO es inaccesible. Las soluciones consolidadas tienen costos que inician en **US$220-US$280 mensuales**<a class="ref-badge" href="#ref-10">10</a><a class="ref-badge" href="#ref-11">11</a>, montos prohibitivos para una microempresa que lucha por su supervivencia.</li>
         </ul>
-        <p class="fw-bold mt-3">La consecuencia directa es una alta exposición al riesgo: se estima que hasta un 80% de los trabajadores en la región podrían estar expuestos a peligros por falta de medidas preventivas<a class="ref-badge" href="#ref-6">6</a>. Sin embargo, está demostrado que la implementación de sistemas de gestión puede reducir las tasas de accidentes hasta en un 67%<a class="ref-badge" href="#ref-14">14</a>. Es en esta brecha donde Kuida interviene.</p>
+        
+        <h3 class="h5 mt-4">2.2. Oportunidades de la Digitalización y la IA</h3>
+        <p>La OIT destaca que la digitalización y la IA crean grandes oportunidades para reducir exposiciones peligrosas, prevenir lesiones y mejorar las condiciones de trabajo<a class="ref-badge" href="#ref-17">17</a>. Tecnologías como la automatización, los asistentes inteligentes y la gestión algorítmica pueden transformar la gestión de riesgos. Integrar estas herramientas en una plataforma asequible para las MiPyMEs representa una oportunidad única para cerrar las brechas existentes.</p>
+      </section>
+
+      <section class="section" id="objetivos">
+        <h2 class="h4">3. Objetivo General</h2>
+        <p>Prototipar y validar un <strong>agente de IA conversacional</strong> como elemento central de un ecosistema digital, el cual se complementa con una <strong>plataforma de gestión integral</strong> y una <strong>comunidad empresarial y educativa</strong> en torno a las normas ISO, HSEQ y SST. El objetivo es facilitar a las MiPyMEs de América Latina la implementación de planes de prevención, el cumplimiento normativo y el cuidado de la salud de los trabajadores, con una estructura de costos accesible y un enfoque adaptado al contexto regional.</p>
+        
+        <h2 class="h4 mt-4">4. Objetivos Específicos</h2>
+        <ol>
+            <li><strong>Diagnosticar</strong> las necesidades de las MiPyMEs en materia de SST/HSEQ mediante encuestas y talleres participativos, identificando brechas de conocimiento y cumplimiento.</li>
+            <li><strong>Desarrollar</strong> un prototipo de plataforma en la nube (SaaS) que integre módulos de identificación de peligros, evaluación de riesgos, planificación, seguimiento y gestión documental.</li>
+            <li><strong>Diseñar e incorporar</strong> un agente de IA multilingüe entrenado en normativa latinoamericana para responder consultas, generar guías y automatizar recordatorios.</li>
+            <li><strong>Realizar pruebas piloto</strong> en al menos 20 MiPyMEs de distintos países para validar usabilidad, pertinencia y reducción de riesgos.</li>
+            <li><strong>Desarrollar un modelo de negocio inclusivo</strong> con tarifas escalonadas y subsidios que garanticen acceso masivo y sostenibilidad.</li>
+        </ol>
       </section>
       
       <section class="section" id="solucion">
-        <h2 class="h4">3. Nuestra Solución: Kuida, Un Ecosistema de IA para la Acción</h2>
-        <p>Kuida no es simplemente otra plataforma. Es una respuesta directa y multidimensional a las barreras identificadas. Nuestra innovación radical cambia el paradigma de la interacción y el soporte.</p>
+        <h2 class="h4">5. Descripción de la Solución Propuesta</h2>
+        <h3 class="h5">5.1. Plataforma SaaS Modular</h3>
+        <p>La plataforma se ofrecerá como servicio en la nube (SaaS), accesible desde web y móviles, con módulos clave que incluyen diagnóstico inicial, gestión de riesgos, gestión documental, salud y bienestar, y analítica de datos.</p>
+        
+        <h3 class="h5 mt-4">5.2. Agente Conversacional Inteligente</h3>
+        <p>A diferencia de un software pasivo, el núcleo de Kuida es un agente de IA proactivo que utiliza procesamiento de lenguaje natural para responder consultas en lenguaje sencillo, generar guías adaptadas, recordar plazos importantes y aprender de la retroalimentación de los usuarios para mejorar continuamente.</p>
+        
+        <h3 class="h5 mt-4">5.3. Modelo de Licencia Accesible</h3>
+        <p>Se proponen tres modalidades para democratizar el acceso:</p>
         <ul>
-          <li><strong>Primero la Conversación, Luego la Plataforma:</strong> Para superar la barrera del "desconocimiento", Kuida es un <span class="highlight">Agente de IA conversacional por voz y texto</span>. El usuario habla con Kuida para resolver dudas normativas, registrar un incidente o planificar una tarea. La plataforma web es el "back-office" donde el trabajo se organiza, eliminando la fricción de los sistemas complejos.</li>
-          <li><strong>Despliegue Flexible (Nube y Local):</strong> Entendiendo las barreras de confianza, Kuida ofrecerá una opción de implementación local ("on-premise"), una característica diferenciadora clave frente a soluciones exclusivamente SaaS que atiende a empresas que gestionan datos sensibles.</li>
-          <li><strong>Un Ecosistema de Aprendizaje Integrado:</strong> No solo ofrecemos una herramienta, sino un ecosistema. Kuida estará respaldado por una <span class="highlight">Escuela Virtual</span> con micro-certificaciones y una <span class="highlight">Comunidad de práctica</span>, transformando una solución de software en una plataforma de fortalecimiento de capacidades a largo plazo.</li>
+            <li><strong>Plan Básico (Sin Costo):</strong> Para microempresas de hasta 10 trabajadores, con módulos esenciales, sostenido por patrocinios.</li>
+            <li><strong>Plan Estándar (US$10-$20/mes):</strong> Para empresas de hasta 50 trabajadores, con acceso a la mayoría de los módulos.</li>
+            <li><strong>Plan Profesional (US$50/mes):</strong> Para empresas medianas y consultores, con acceso completo y analítica avanzada.</li>
         </ul>
+        <p>Estos precios son radicalmente inferiores a las tarifas de mercado (US$220-US$280/mes)<a class="ref-badge" href="#ref-10">10</a><a class="ref-badge" href="#ref-11">11</a>, lo que facilita la adopción masiva.</p>
+      </section>
+      
+      <section class="section" id="beneficiarios">
+        <h2 class="h4">6. Beneficiarios</h2>
+        <h3 class="h5">6.1. Beneficiarios Directos</h3>
+        <ul>
+            <li><strong>MiPyMEs y sus Propietarios/Gerentes:</strong> Obtendrán acceso a un sistema de gestión integral que facilita el cumplimiento normativo y mejora la productividad.</li>
+            <li><strong>Trabajadores y Trabajadoras:</strong> Se beneficiarán de ambientes de trabajo más seguros y programas de bienestar.</li>
+            <li><strong>Consultores de SST y Calidad:</strong> Dispondrán de una plataforma centralizada para gestionar múltiples proyectos de forma más eficiente.</li>
+            <li><span class="highlight"><strong>Estudiantes de Carreras Técnicas y Tecnólogas:</strong></span> Kuida ofrecerá licencias estudiantiles para que los futuros profesionales de HSEQ, ISO y SST desarrollen habilidades prácticas. Al estar expuestos sistemáticamente a la IA, obtendrán una ventaja competitiva única para convertirse en la próxima generación de consultores tecnológicamente fluidos.</li>
+        </ul>
+        <h3 class="h5 mt-4">6.2. Beneficiarios Indirectos</h3>
+        <p>Las <strong>familias</strong> de los trabajadores, el <strong>sistema de salud y seguridad social</strong><a class="ref-badge" href="#ref-12">12</a>, los <strong>gobiernos</strong> y la <strong>sociedad en general</strong> se beneficiarán de la reducción de accidentes, la mejora en la formalidad y el aumento de la productividad regional.</p>
       </section>
 
       <section class="section" id="plan-trabajo">
-        <h2 class="h4">4. Metodología y Plan de Trabajo Ágil (9 Meses para Prototipo)</h2>
-        <p>Hemos reestructurado el plan de trabajo a un cronograma ágil de 9 meses, enfocado en entregar valor rápidamente y validar el impacto con beneficiarios reales. La metodología se basa en principios de Design Thinking y desarrollo iterativo.</p>
-        
+        <h2 class="h4">7. Plan de Trabajo (9 Meses para Prototipo)</h2>
+        <p>Conservamos nuestro plan de trabajo ágil de 9 meses, enfocado en entregar valor rápidamente y validar el impacto con beneficiarios reales.</p>
         <ul class="timeline">
-            <li class="timeline-item">
-                <div class="timeline-icon">1</div>
-                <div class="timeline-content"><h5>Fase 1: Diagnóstico y Co-diseño (Mes 1)</h5><p>Inmersión profunda con MiPyMEs para validar necesidades y priorizar funcionalidades. <br><strong>Resultado Clave:</strong> Documento de Especificaciones de Prototipo centrado en el usuario.</p></div>
-            </li>
-            <li class="timeline-item">
-                <div class="timeline-icon">2</div>
-                <div class="timeline-content"><h5>Fase 2: Desarrollo del Prototipo y Agente IA (Meses 2-6)</h5><p>Desarrollo en sprints del prototipo funcional y entrenamiento inicial del Agente de IA. <br><strong>Resultado Clave:</strong> Prototipo MVP (Mínimo Producto Viable) funcional.</p></div>
-            </li>
-            <li class="timeline-item">
-                <div class="timeline-icon">3</div>
-                <div class="timeline-content"><h5>Fase 3: Pruebas Piloto e Iteración (Meses 7-8)</h5><p>Despliegue con 20 MiPyMEs aliadas. Recopilación de datos de usabilidad y feedback para ajustes. <br><strong>Resultado Clave:</strong> Informe de resultados del piloto y backlog de mejoras.</p></div>
-            </li>
-            <li class="timeline-item">
-                <div class="timeline-icon">4</div>
-                <div class="timeline-content"><h5>Fase 4: Evaluación de Impacto y Estrategia de Escalado (Mes 9)</h5><p>Análisis de datos según nuestro Marco de Impacto y diseño del plan de escalamiento. <br><strong>Resultado Clave:</strong> Informe final de impacto del prototipo y plan de negocio.</p></div>
-            </li>
+            <li class="timeline-item"><div class="timeline-icon">1</div><div class="timeline-content"><h5>Fase 1: Diagnóstico y Co-diseño (Mes 1)</h5><p><strong>Resultado Clave:</strong> Documento de Especificaciones de Prototipo centrado en el usuario.</p></div></li>
+            <li class="timeline-item"><div class="timeline-icon">2</div><div class="timeline-content"><h5>Fase 2: Desarrollo del Prototipo y Agente IA (Meses 2-6)</h5><p><strong>Resultado Clave:</strong> Prototipo MVP (Mínimo Producto Viable) funcional.</p></div></li>
+            <li class="timeline-item"><div class="timeline-icon">3</div><div class="timeline-content"><h5>Fase 3: Pruebas Piloto e Iteración (Meses 7-8)</h5><p><strong>Resultado Clave:</strong> Informe de resultados del piloto y backlog de mejoras.</p></div></li>
+            <li class="timeline-item"><div class="timeline-icon">4</div><div class="timeline-content"><h5>Fase 4: Evaluación de Impacto y Estrategia de Escalado (Mes 9)</h5><p><strong>Resultado Clave:</strong> Informe final de impacto del prototipo y plan de negocio.</p></div></li>
         </ul>
-      </section>
-
-      <section class="section" id="alianzas">
-        <h2 class="h4">5. Colaboraciones Estratégicas Consolidadas</h2>
-        <p>Kuida no es una iniciativa aislada. Contamos con un consorcio de aliados que garantizan la viabilidad y excelencia del proyecto:</p>
-        <div class="partner-card">
-          <h6 class="fw-bold">Politécnico ASYS (Aliado Académico y de Contenido)</h6>
-          <p class="mb-0">Liderará la <span class="highlight">estructuración de los contenidos pedagógicos para la Escuela Virtual</span>, asegurando rigor académico y práctico.</p>
-        </div>
-        <div class="partner-card">
-          <h6 class="fw-bold">Gestar Proyectos (Aliado de Campo y Comunidad)</h6>
-          <p class="mb-0">Será clave para el <span class="highlight">proceso de co-diseño (Design Thinking)</span>, garantizando que el desarrollo esté centrado en las necesidades del usuario final.</p>
-        </div>
-        <div class="partner-card">
-          <h6 class="fw-bold">FreePik LatAm (Aliado Tecnológico y de Sostenibilidad)</h6>
-          <p class="mb-0">Brindará asesoría en <span class="highlight">sostenibilidad y modelos de precios</span>, y colaborará en el co-diseño de un <span class="highlight">sistema de IA para la generación de reportes visuales</span>.</p>
-        </div>
+        <p class="mt-4">Nuestras <strong>colaboraciones estratégicas</strong> con Politécnico ASYS (Contenido Académico), Gestar Proyectos (Comunidad) y FreePik LatAm (Tecnología y Sostenibilidad) son pilares fundamentales para la ejecución exitosa de este plan.</p>
       </section>
 
       <section class="section" id="impacto-mel">
-        <h2 class="h4">6. Impacto Potencial y Medición (MEL)</h2>
-        <p>Para medir rigurosamente nuestro impacto, hemos diseñado un <strong>Marco de Impacto centrado en un sistema de Monitoreo, Evaluación y Aprendizaje (MEL)</strong>.</p>
-        <div class="table-responsive">
-            <table class="table table-bordered">
-                <thead><tr><th>Nivel de Resultado</th><th>Indicadores Clave (Prototipo)</th><th>Herramienta</th></tr></thead>
-                <tbody>
-                    <tr><td><strong>Productos (Outputs)</strong></td><td>- Prototipo funcional desplegado.<br>- # de módulos educativos en Escuela Virtual (MVP).</td><td>Checklist de desarrollo.</td></tr>
-                    <tr><td><strong>Resultados a Corto Plazo (Impacto Educativo)</strong></td><td>- % de mejora en conocimiento de SST (pre/post).<br>- Tasa de adopción de módulos educativos.</td><td>Encuestas en plataforma.</td></tr>
-                    <tr><td><strong>Resultados a Medio Plazo (Cambio Cultural)</strong></td><td>- Frecuencia de conversaciones sobre SST (reportado).<br>- # de planes de acción de SST creados.</td><td>Entrevistas, analítica de uso.</td></tr>
-                </tbody>
-            </table>
-        </div>
+        <h2 class="h4">8. Impacto Esperado y Métricas de Éxito</h2>
+        <p>Nuestro sistema MEL medirá el éxito a través de indicadores claros en la fase de prototipo y más allá:</p>
+        <ul>
+            <li><strong>Reducción de Accidentes (Largo Plazo):</strong> Disminuir en al menos 30% la tasa de accidentes reportados por las MiPyMEs participantes tras 12 meses de uso.</li>
+            <li><strong>Aumento del Cumplimiento Normativo:</strong> Lograr que al menos el 80% de las empresas piloto cumpla con los requisitos mínimos de la legislación local (p. ej., Res. 0312 en Colombia)<a class="ref-badge" href="#ref-16">16</a> al finalizar el piloto.</li>
+            <li><strong>Accesibilidad Económica:</strong> Ofrecer licencias a menos del 10% del costo promedio del mercado<a class="ref-badge" href="#ref-10">10</a><a class="ref-badge" href="#ref-11">11</a>.</li>
+            <li><strong>Impacto Educativo (Corto Plazo):</strong> Mediremos el % de mejora en conocimiento de SST (pre/post uso) y la tasa de adopción de módulos en la Escuela Virtual, incluyendo el número de estudiantes beneficiados con licencias.</li>
+            <li><strong>Participación de Mujeres y Población Vulnerable:</strong> Garantizar que al menos el 50% de las MiPyMEs beneficiarias estén lideradas por mujeres<a class="ref-badge" href="#ref-19">19</a>.</li>
+        </ul>
       </section>
-
-      <section class="section" id="sostenibilidad">
-        <h2 class="h4">7. Sostenibilidad y Escalabilidad</h2>
-        <p>Nuestra visión de sostenibilidad se basa en un modelo de ingresos diversificado (Suscripciones SaaS, Formación Especializada y Alianzas Estratégicas) y un plan de expansión por fases que incluye la "tropicalización" del Agente de IA para nuevos países y un modelo de "Channel Partners" para escalar regionalmente.</p>
+      
+      <section class="section" id="valor-diferencial">
+        <h2 class="h4">9. Valor Diferencial e Innovación</h2>
+        <ul>
+            <li><strong>IA al Servicio de la Prevención:</strong> Democratizamos el conocimiento experto con asesoría 24/7 a través del agente conversacional.</li>
+            <li><strong>Enfoque Regional y Realista:</strong> La solución está adaptada a los marcos regulatorios y a la realidad de recursos limitados de las MiPyMEs latinoamericanas.</li>
+            <li><strong>Modelo de Precios Inclusivo:</strong> Tarifas radicalmente inferiores y planes gratuitos para fomentar la formalización y la equidad.</li>
+            <li><span class="highlight"><strong>Ecosistema Educativo y Profesionalizante:</strong></span> Nuestra innovación clave no es solo la tecnología, sino la creación de un ecosistema. Al integrar una Escuela Virtual y ofrecer licencias estudiantiles, estamos construyendo un puente entre la educación y el empleo, preparando a la futura fuerza laboral de consultores SST con habilidades de IA indispensables.</li>
+        </ul>
       </section>
 
       <section class="section" id="conclusion">
-        <h2 class="h4">8. Conclusión y Llamado a la Acción</h2>
-        <p class="lead">El costo de la inacción en SST es inaceptable. Kuida no es solo software; es una solución integral para democratizar la seguridad, potenciar la productividad y salvar vidas.</p>
-        <p><strong>Con el apoyo del Fondo Global de Innovación, validaremos este prototipo y sentaremos las bases para transformar la cultura de prevención en la región.</strong></p>
+        <h2 class="h4">10. Conclusiones y Llamado a la Acción</h2>
+        <p class="lead">Las MiPyMEs enfrentan un panorama crítico en SST por falta de recursos, conocimiento y acceso a soluciones asequibles<a class="ref-badge" href="#ref-7">7</a><a class="ref-badge" href="#ref-12">12</a>. El costo humano y económico de la inacción es altísimo: millones de vidas afectadas y pérdidas de productividad de varios puntos del PIB<a class="ref-badge" href="#ref-4">4</a><a class="ref-badge" href="#ref-5">5</a>.</p>
+        <p><strong>Con el apoyo del Fondo Global de Innovación, será posible prototipar, validar y escalar esta solución, contribuyendo a la reducción de la siniestralidad, a la formalización de las MiPyMEs y al fortalecimiento de la cultura de prevención en toda la región.</strong></p>
       </section>
 
       <section class="section refs-section" id="referencias-links">
@@ -181,15 +221,17 @@
           <li id="ref-3"><strong>Fundación MAPFRE.</strong> <a href="https://documentacion.fundacionmapfre.org/documentacion/publico/es/media/group/11134849.do" target="_blank" rel="noopener">Las mipymes y el sistema de seguridad y salud en el trabajo</a> (Datos sobre participación de microempresas 2015-2020).</li>
           <li id="ref-4"><strong>OIT.</strong> <a href="https://www.ilo.org/es/temas-y-sectores/seguridad-y-salud-en-el-trabajo" target="_blank" rel="noopener">Seguridad y salud en el trabajo</a>.</li>
           <li id="ref-5"><strong>OIT / Uniminuto.</strong> <a href="https://www.uniminuto.edu/noticias/374-millones-de-personas-sufren-accidentes-laborales-al-ano-oit" target="_blank" rel="noopener">374 millones de personas sufren accidentes laborales al año</a>.</li>
-          <li id="ref-6"><strong>BID.</strong> <a href="https://www.iadb.org/es/noticias/costos-por-falta-de-medidas-de-seguridad-y-salud-en-el-trabajo-estimados-en-us76000" target="_blank" rel="noopener">Costos por falta de medidas de seguridad y salud en el trabajo estimados en US$76000</a>.</li>
+          <li id="ref-6"><strong>BID.</strong> <a href="https://www.iadb.org/es/noticias/costos-por-falta-de-medidas-de-seguridad-y-salud-en-el-trabajo-estimados-en-us76000" target="_blank" rel="noopener">Costos por falta de medidas de seguridad y salud...</a></li>
           <li id="ref-7"><strong>OIT.</strong> <a href="https://www.ilo.org/es/seguridad-y-salud-en-las-microempresas-y-pequenas-y-medianas-empresas" target="_blank" rel="noopener">Seguridad y salud en las microempresas y pymes (MiPYME)</a>.</li>
-          <li id="ref-8"><strong>Redalyc.</strong> <a href="https://www.redalyc.org/journal/6381/638170560206/html/" target="_blank" rel="noopener">Percepciones sobre los sistemas de SST en organizaciones textiles de Medellín (análisis cualitativo)</a>.</li>
+          <li id="ref-8"><strong>Redalyc.</strong> <a href="https://www.redalyc.org/journal/6381/638170562006/html/" target="_blank" rel="noopener">Percepciones sobre los sistemas de SST en organizaciones textiles de Medellín (análisis cualitativo)</a>.</li>
           <li id="ref-9"><strong>Fundación MAPFRE.</strong> <a href="https://documentacion.fundacionmapfre.org/documentacion/publico/es/media/group/11134849.do" target="_blank" rel="noopener">Las mipymes y el sistema de seguridad y salud en el trabajo</a> (Datos cualitativos).</li>
           <li id="ref-10"><strong>Isolucion Software.</strong> <a href="https://isolucion.com/blog/top-10-software-para-sistemas-de-gestion-iso/" target="_blank" rel="noopener">Top 10 software para sistemas de gestión ISO</a>.</li>
           <li id="ref-11"><strong>Kawak.</strong> <a href="https://kawak.net/es/precios" target="_blank" rel="noopener">Precios QMS de gestión de calidad ISO9001</a>.</li>
           <li id="ref-12"><strong>Fundación MAPFRE.</strong> <a href="https://documentacion.fundacionmapfre.org/documentacion/publico/es/media/group/11134849.do" target="_blank" rel="noopener">Las mipymes y el sistema de seguridad y salud en el trabajo</a> (Datos sobre desconocimiento normativo).</li>
-          <li id="ref-14"><strong>Redalyc.</strong> <a href="https://www.redalyc.org/journal/6381/638170560206/html/" target="_blank" rel="noopener">Percepciones sobre los sistemas de SST...</a> (Datos sobre reducción de tasas de accidentes).</li>
-          <li id="ref-16"><strong>Redalyc.</strong> <a href="https://www.redalyc.org/journal/6381/638170560206/html/" target="_blank" rel="noopener">Percepciones sobre los sistemas de SST...</a> (Datos sobre cumplimiento de Res. 0312).</li>
+          <li id="ref-14"><strong>Redalyc.</strong> <a href="https://www.redalyc.org/journal/6381/638170562006/html/" target="_blank" rel="noopener">Percepciones sobre los sistemas de SST...</a> (Datos sobre reducción de tasas de accidentes).</li>
+          <li id="ref-16"><strong>Redalyc.</strong> <a href="https://www.redalyc.org/journal/6381/638170562006/html/" target="_blank" rel="noopener">Percepciones sobre los sistemas de SST...</a> (Datos sobre cumplimiento de Res. 0312).</li>
+          <li id="ref-17"><strong>OIT.</strong> <a href="https://www.ilo.org/es/publications/revolucion-de-la-seguridad-y-salud-papel-de-la-ia-y-la-digitalizacion-en-el" target="_blank" rel="noopener">Revolución de la seguridad y salud: Papel de la IA...</a></li>
+          <li id="ref-19"><strong>PNUD.</strong> <a href="https://www.undp.org/es/latin-america/blog/micro-pequenas-y-medianas-empresas-resilientes-por-y-para-la-prosperidad" target="_blank" rel="noopener">Datos sobre emprendimiento femenino</a> (mismo recurso que 1).</li>
         </ol>
       </section>
 
